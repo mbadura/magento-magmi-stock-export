@@ -1,0 +1,83 @@
+<?php $url = Mage::helper('adminhtml')->getUrl('magmiexport/adminhtml_magmiexportbackend/post'); ?>
+
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3 style="padding-top:40px;"><?=$this->__('Welcome to Creativestyle Magmi Product Export')?></h3></td>
+            <td style="text-align: right; vertical-align: bottom;">
+
+                <a href="http://www.creativestyle.de"><img src="http://www.creativestyle.de/uploads/pics/creativestyle_01.jpg" style="width:15%; margin-right: 10px;"></a>
+                <a href="http://sourceforge.net/projects/magmi/"><img src="http://wiki.magmi.org/images/c/c9/Logo.png" style="width: 15%"></a>
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+<form action="<?php echo $url; ?>" method="POST" enctype="multipart/form-data" name="magmiexport">
+<?php echo $this->getBlockHtml('formkey'); ?>
+
+<div class="entry-edit">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?=$this->__('Select fields to export')?></h4>
+        <fieldset id="my-fieldset">
+            <table cellspacing="0" class="form-list">
+                <tr><td class="input-ele"><input type="checkbox" name="fields[entity_id]" style="margin-right: 10px; margin-top:2px; float:left;" />
+                    <label for="fields[enity_id]">Product ID</label>
+                </td></tr>
+                <tr><td class="input-ele"><input type="checkbox" name="fields[sku]" style="margin-right: 10px; margin-top:2px; float:left;" />
+                    <label for="fields[sku]">Product SKU</label>
+                </td></tr>
+                 <tr><td class="input-ele"><input type="checkbox" name="fields[name]" style="margin-right: 10px; margin-top:2px; float:left;" />
+                    <label for="fields[name]">Product Name</label>
+                </td></tr>
+                <tr><td class="input-ele"><input type="checkbox" name="fields[description]" style="margin-right: 10px; margin-top:2px; float:left;" />
+                    <label for="fields[description]">Product Description</label>
+                </td></tr>
+                <tr><td class="input-ele"><input type="checkbox" name="fields[short_description]" style="margin-right: 10px; margin-top:2px; float:left;" />
+                    <label for="fields[short_description]">Product Short Description</label>
+                </td></tr>
+                <tr><td class="input-ele"><input type="checkbox" name="fields[visibility]" style="margin-right: 10px; margin-top:2px; float:left;" />
+                    <label for="fields[visibility]">Product Visibility</label>
+                </td></tr>
+                <tr><td class="input-ele"><input type="checkbox" name="fields[status]" style="margin-right: 10px; margin-top:2px; float:left;" />
+                    <label for="fields[status]">Product Status</label>
+                </td></tr>
+            </table>
+        </fieldset>
+</div>
+
+<div class="entry-edit">
+    <h4 class="icon-head head-edit-form fieldset-legent"><?=$this->__('Additional options / Configure')?></h4>
+    <fieldset id="my-fieldset">
+        <table cellspacing="0" class="form-list">
+            <tr>
+                <td class="input-ele">
+                    <label for="options[export_range]">Select whitch products you want to export</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="input-ele">
+                    <select name="options[export_range]">
+                        <option value="1">Simple Products</option>
+                        <option value="2">Configurable Products</option>
+                        <option value="3">All Products</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+
+<div class="entry-edit">
+        <h4 class="icon-head head-edit-form fieldset-legend"><?=$this->__('Run me')?></h4>
+        <fieldset id="my-fieldset">
+            <table cellspacing="0" class="form-list">
+                <tr>
+                	<td><button type="submit" name="magmiexport" class="go"><span>Run product export</span></button></td>
+                </tr>
+            </table>
+        </fieldset>
+
+</div>
+
+</form>

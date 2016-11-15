@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <magmiexport_adminhtml_magmiexportbackend_index>
+	<reference name="content">
+	  <block type="magmiexport/adminhtml_magmiexportbackend" name="magmiexportbackend" template="magmiexport/magmiexportbackend.phtml"/>
+	</reference>
+  </magmiexport_adminhtml_magmiexportbackend_index>
+</layout>
